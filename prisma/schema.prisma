@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Podcast {
+  id        String    @id @default(cuid())
+  title     String
+  author    String
+  image     String
+  feedUrl   String    @unique
+  createdAt DateTime  @default(now())
+  episodes  Episode[]
+}
+
+model Episode {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  audioUrl    String   @unique
+  pubDate     DateTime
+  podcastId   String
+  podcast     Podcast  @relation(fields: [podcastId], references: [id])
+}

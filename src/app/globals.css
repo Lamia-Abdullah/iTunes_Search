@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Base scrollbar appearance  */
+.scrollbar-custom::-webkit-scrollbar {
+  height: 3px; /* default height */
+  transition: height 0.3s ease; /* smooth height transition */
+}
+
+/* On hover increase height */
+.scrollbar-custom:hover::-webkit-scrollbar {
+  height: 10px;
+}
+
+/* Track style  */
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: #1c1d2e; 
+  border-radius: 9999px; 
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+/* Thumb style  */
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background-color: #5b4db1; 
+  border-radius: 9999px; /* full rounded corners */
+}
