@@ -9,8 +9,7 @@
 
 ---
 
-##  طريقة التشغيل | Getting Started 🚀
-
+##   Getting Started | طريقة التشغيل 🚀 
 1. شغل السيرفر المحلي:🧑‍💻
 
    ```bash
@@ -54,43 +53,10 @@ Supabase (PostgreSQL) — قاعدة بيانات 🛢️
 
 -----------------------------
 
+###  Project Structure | هيكلة المشروع 🗂️ 
 
 
-### هيكلة المشروع | Project Structure 🗂️ 
 
-src/
-├── app/                      # صفحات Next.js وملفات API
-│    ├── layout.js             # تخطيط الصفحة الأساسي
-│    ├── globals.css           # تنسيقات عامة للمشروع
-│    ├── page.js               # الصفحة الرئيسية لنتائج البحث
-│    └── api/
-│         ├─ search/route.js    # Endpoint للبحث عبر iTunes
-│         └─ episodes/route.js  # Endpoint لتحليل الحلقات من RSS
-│
-├── components/               # مكونات أساسية للواجهة
-│      ├── SearchInput.js
-│      ├── PodcastSection.js
-│      ├── EpisodeSection.js
-│      ├── Banner.js
-│      ├── NoResults.js
-│      ├── Loader.js
-│      └── Sidebar.js
-│
-├── common/                   # 🔁 مكونات  قابلة لإعادة الاستخدام
-│     ├── Button.js
-│     ├── PodcastCard.js
-│     └── EpisodeCard.js
-│
-├── hooks/
-│     └── useSearch.js          # logic منطق البحث 
-│
-├── services/                 # 🌐  (Functions) للتواصل مع API
-│     ├── searchService.js
-│     ├── episodeService.js
-│     └── handleSearch.js
-│
-├── generated/
-│      └── prisma/               # ملفات Prisma و Client
-│
-└── public/
-      └── images/logo.png       # شعار المشروع
+
+      
+<img width="513" alt="Screenshot 1447-01-07 at 11 24 48 PM" src="https://github.com/user-attachments/assets/41919a87-2007-4aec-ba91-2f70da3a0433" />
