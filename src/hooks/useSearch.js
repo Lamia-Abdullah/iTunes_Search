@@ -24,7 +24,7 @@ export function useSearch(defaultTerm = "فنجان") {
       // Otherwise, run an initial default search
       runInitialSearch(defaultTerm);
     }
-  }, []);
+}, [defaultTerm, runInitialSearch]);
 
   const runInitialSearch = async (searchTerm) => {
     try {
