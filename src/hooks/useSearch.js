@@ -22,18 +22,20 @@ export function useSearch(defaultTerm = "فنجان") {
       setLastSearch(cachedSearch);
     } else {
       // Otherwise, run an initial default search
-      runInitialSearch(defaultTerm);
+      (async () => {
+        try {
+          const data = await searchPodcasts(defaultTerm);
+          await handleSearch({
+            query: defaultTerm,
+            results: data.results || [],
+          });
+        } catch (e) {
+          console.error("initial search failed", e);
+        }
+      })();
     }
-}, [defaultTerm, runInitialSearch]);
+  }, [defaultTerm]);
 
-  const runInitialSearch = async (searchTerm) => {
-    try {
-      const data = await searchPodcasts(searchTerm);
-      await handleSearch({ query: searchTerm, results: data.results || [] });
-    } catch (e) {
-      console.error("initial search failed", e);
-    }
-  };
 
   const handleSearch = async ({ query, results }) => {
     setIsLoading(true);
